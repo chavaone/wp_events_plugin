@@ -70,7 +70,7 @@ if(!class_exists('Eventos_Post_Type'))
         }
 
 
-        public function save_post($post_id, $post )
+        public function save_post($post_id, $post)
         {
 
             /* Verify the nonce before proceeding. */
