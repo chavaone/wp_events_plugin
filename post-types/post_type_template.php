@@ -70,12 +70,9 @@ if(!class_exists('Eventos_Post_Type'))
         }
 
 
-        public function save_post($post_id, $post)
+        public function save_post($post_id)
         {
-
-            /* Verify the nonce before proceeding. */
-            if ( !isset( $_POST['event_post_nonce'] ) || !wp_verify_nonce( $_POST['event_post_nonce'], basename( __FILE__ ) ) )
-              return $post_id;
+            global $post;
 
             /* Get the post type object. */
             $post_type = get_post_type_object( $post->post_type );
@@ -201,7 +198,7 @@ if(!class_exists('Eventos_Post_Type'))
         public function add_inner_meta_boxes($post)
         {
             // Render the job order metabox
-            include(sprintf("%s/../templates/%s_metabox.php", dirname(__FILE__), self::POST_TYPE));
+            include(plugin_dir_path(dirname(__FILE__)) . sprintf("templates/%s_metabox.php", self::POST_TYPE));
         } // END public function add_inner_meta_boxes($post)
 
     } // END class Post_Type_Template

@@ -22,7 +22,6 @@
 
   ?>
   <div class="tf-meta">
-      <?php wp_nonce_field( basename( __FILE__ ), 'event_post_nonce' ); ?>
       <ul>
           <li>
             <label>Data</label>
