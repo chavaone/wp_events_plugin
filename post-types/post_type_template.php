@@ -163,7 +163,7 @@ if(!class_exists('Eventos_Post_Type'))
 
             if ( $post_type == 'eventos')
             {
-              wp_enqueue_style('ui-datepicker', plugins_url ("../css/pikaday.css'", __FILE__) );
+              wp_enqueue_style('ui-datepicker', plugins_url ("css/pikaday.css", dirname(__FILE__)));
             }
         }
 
@@ -174,8 +174,8 @@ if(!class_exists('Eventos_Post_Type'))
 
             if( 'eventos' == $post_type )
             {
-              wp_enqueue_script('pickaday', plugins_url ("../js/pikaday.js", __FILE__));
-              wp_enqueue_script('date_metabox', plugins_url ("../js/date_metabox.js", __FILE__), array('pickaday'), false, true);
+              wp_enqueue_script('pickaday', plugins_url ("js/pikaday.js", dirname(__FILE__)));
+              wp_enqueue_script('date_metabox', plugins_url ("js/date_metabox.js", dirname(__FILE__)), array('pickaday'), false, true);
             }
         }
 
